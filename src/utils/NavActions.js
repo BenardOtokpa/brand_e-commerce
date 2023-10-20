@@ -4,7 +4,7 @@ import { FaUser, FaShoppingCart, FaHeart } from "react-icons/fa";
 
 const NavActions = () => {
   return (
-    <nav className="flex h-[50px] w-[250px] cursor-pointer items-center justify-center space-x-4 p-4 text-gray-500">
+    <nav className="flex h-[50px] w-[250px] cursor-pointer items-center justify-center font-inter space-x-4 p-4 text-gray-500">
       <Link to="/profile" className="flex flex-col items-center text-xs">
         <FaUser size={20}/>
         <p>Profile</p>
@@ -23,7 +23,7 @@ const NavActions = () => {
       </Link>
       <Link to="/cart" className="flex flex-col items-center  space-x-2 text-xs">
         <FaShoppingCart size={20} />
-        <span className="w-[45px]">My Cart</span>
+        <span className="w-[55px]">My Cart</span>
       </Link>
     </nav>
   );
