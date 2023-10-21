@@ -1,20 +1,27 @@
-import React from "react";
+import React from 'react';
+import { Menu, Dropdown } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
 
-const DropDown = ({ value, onChange, options }) => {
-    
-  return (
-    <select
-      value={value}
-      onChange={onChange}
-      
-    >
-      {options.map((option) => (
-        <option key={option} value={option} className="text-gray-500">
-          {option}
-        </option>
+const ReusableDropdown = ({ options, value,image, width, height }) => {
+  const menu = (
+    <Menu>
+      {options.map((option, index) => (
+        <Menu.Item key={index}>
+          <a rel="noopener noreferrer" href={option.link}>
+            {option.title}
+          </a>
+        </Menu.Item>
       ))}
-    </select>
+    </Menu>
+  );
+
+  return (
+    <Dropdown value={value} width={width} height={height} image={image} overlay={menu}>
+      <a className="ant-dropdown-link" href='/'onClick={(e) => e.preventDefault()}>
+       {value} {image} <DownOutlined />
+      </a>
+    </Dropdown>
   );
 };
 
-export default DropDown;
+export default ReusableDropdown;
