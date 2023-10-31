@@ -2,7 +2,7 @@ import React from 'react';
 import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
-const ReusableDropdown = ({ options, value,image, width, height }) => {
+const ReusableDropdown = ({ options, value, image, dropdownStyles }) => {
   const menu = (
     <Menu>
       {options.map((option, index) => (
@@ -16,9 +16,13 @@ const ReusableDropdown = ({ options, value,image, width, height }) => {
   );
 
   return (
-    <Dropdown value={value} width={width} height={height} image={image} overlay={menu}>
-      <a className="ant-dropdown-link" href='/'onClick={(e) => e.preventDefault()}>
-       {value} {image} <DownOutlined />
+    <Dropdown value={value} image={image} overlay={menu}>
+      <a
+        className="ant-dropdown-link whitespace-pre flex items-center justify-between text-sm"
+        href="/"
+        onClick={(e) => e.preventDefault()}
+      >
+        {value} {image} <DownOutlined />
       </a>
     </Dropdown>
   );

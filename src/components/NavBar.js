@@ -10,6 +10,16 @@ const NavBar = () => {
     { title: 'Option 2', link: '#' },
     { title: 'Option 3', link: '#' },
   ];
+  const currencies = [
+    { title: 'Japan, YEN', link: '#' },
+    { title: 'British, POUNDS', link: '#' },
+    { title: 'Swiss, FRANC', link: '#' },
+  ];
+  const cities = [
+    { title: 'United Kingdom', link: '#' },
+    { title: 'China', link: '#' },
+    { title: 'Spain', link: '#' },
+  ];
 
 
 
@@ -24,13 +34,13 @@ const NavBar = () => {
           <li>Projects</li>
           <li>Menu Items</li>
         </ul>
-        <div className="w-auto ml-4">
+        <div className="w-auto mx-4">
         </div>
         <ReusableDropdown value={'Help'} options={dropdownOptions} />
       </div>
-      <div className=" w-80 h-[60px] text-base   flex justify-between">
-      <ReusableDropdown value={'Enlisgh,USD'} options={dropdownOptions} />
-      <ReusableDropdown value={`Ship to`} image={<img src={flag} alt="flag" />} options={dropdownOptions} />
+      <div className=" w-72 h-[60px] flex mr-9 justify-between pr-16 whitespace-pre space-x-1">
+      <ReusableDropdown value={'English, USD'} options={currencies} />
+      <ReusableDropdown value={'Ship to '} image={<img  src={flag} alt="flag" /> } options={cities} />
       </div>
     </nav>
   );
